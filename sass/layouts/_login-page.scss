@@ -3,35 +3,47 @@
 
 .container {
     background-color: $bg;
+
     &__section {
         &__main {
+            // display: flex;
+            // justify-content: center;
+            // align-items: center;
+            // // height: 68.2rem;
+            // // width: 86.4rem;
+
             &__article {
-                width: 100vw;
-                height: 100vh;
+                height: 100%;
+                width: 100%;
                 display: grid;
                 grid-template-areas:
                     'left right'
                     'footer footer';
-                justify-content: center;
-                align-items: center;
+                // justify-content: center;
+                // align-items: center;
                 grid-template-columns: 1fr 1fr;
-                grid-template-rows: 83% auto;
+                grid-template-rows: 100% auto;
                 overflow-x: hidden;
+                margin-top: 4rem;
+                // gap: 1rem;
 
                 &__left {
-                    height: 100%;
-                    width: auto;
-                    margin-top: 8rem;
+                    // height: 100%;
+                    // width: auto;
+                    height: 61.8rem;
+                    width: 45.5rem;
 
                     display: flex;
-                    justify-content: end;
-                    align-items: center;
+                    // justify-content: end;
+                    // align-items: center;
+                    margin-left: 10rem;
 
                     &__images {
                         &__frames {
                             img {
                                 height: 618px;
                                 width: auto;
+                                margin-left: 3.8rem;
                             }
 
                             // &__bg-img {
@@ -46,19 +58,19 @@
                     @include flex(column);
                     height: 60.6rem;
                     width: 35rem;
-                    margin-top: 8rem;
+                    margin-left: 2.1rem;
 
                     &__top {
                         border: 1px solid silver;
                         background-color: $bg-top;
                         @include flex(column);
-                        height: 38.2rem;
+                        height: 35.9rem;
                         width: 100%;
 
                         h1 {
                             height: 5.1rem;
-
                             font-size: 5rem;
+                            margin-bottom: 2rem;
                         }
 
                         img {
@@ -90,12 +102,13 @@
                                     grid-template-rows: repeat(4, 1fr);
                                     justify-content: center;
                                     align-items: center;
+                                    row-gap: 0.3rem;
                                     // // text-align: initial;
-                                    // background-color: lightblue;
                                     // @include flex(column);
 
                                     &__container-user {
-                                        margin: 0 4rem;
+                                        // background-color: lightblue;
+                                        // margin: 0 4rem;
 
                                         &__inner {
                                             @include flex(column);
@@ -104,11 +117,10 @@
                                                 @include flex(column);
                                                 position: relative;
 
-                                                &__span {
-                                                    padding: 9px 0 7px 8px;
-                                                    @include flex(column);
-
-                                                    position: absolute;
+                                                input {
+                                                    padding: 0 1rem;
+                                                    width: 26.8rem;
+                                                    height: 3.7rem;
                                                 }
                                             }
                                         }
@@ -124,11 +136,12 @@
                                                 @include flex(column);
                                                 position: relative;
 
-                                                &__span {
-                                                    position: absolute;
-                                                    padding: 9px 0 7px 8px;
-                                                    display: flex;
-                                                    align-items: flex-start;
+                                                input {
+                                                    width: 26.8rem;
+                                                    height: 3.7rem;
+                                                    padding: 0 1rem;
+                                                    // margin-top: 1rem;
+                                                    margin-bottom: 1rem;
                                                 }
                                             }
                                         }
@@ -137,77 +150,108 @@
                                     &__btn {
                                         @include flex(column);
 
-                                        height: 3.2rem;
-                                        width: 35rem;
+                                        // height: 3.2rem;
+                                        // width: 35rem;
+
+                                        // margin-top: 1rem;
 
                                         button {
-                                            height: 3.2rem;
-                                            width: 26.5rem;
+                                            // height: 3.2rem;
+                                            // width: 26.5rem;
+                                            width: 26.8rem;
+                                            height: 3.7rem;
 
                                             &__content {
                                                 font-size: 1.8rem;
-                                                height: 1.8rem;
-                                                width: 24.3rem;
+                                                // height: 1.8rem;
+                                                // width: 24.3rem;
                                             }
                                         }
                                     }
 
                                     &__hr {
                                         height: 1.5rem;
-                                        width: 26.5rem;
+                                        width: 100%;
 
                                         display: flex;
                                         flex-direction: row;
                                         justify-content: space-around;
+                                        align-content: center;
+                                        align-items: center;
+                                        // align-self: center;
+                                        // align-tracks: center;
+                                        padding: 0 3.2rem;
 
                                         &__line1 {
+                                            height: 0.05em;
                                             width: 10.7rem;
                                             color: silver;
+                                            border-bottom: 1px solid silver;
+                                            justify-content: center;
 
                                             &__or {
-                                                font-size: 1.5rem;
-                                                font-weight: 600;
+                                                text-align: center;
+                                                text-justify: center;
 
                                                 &__line2 {
+                                                    height: 0.05em;
                                                     width: 10.7rem;
                                                     color: silver;
+                                                    border-bottom: 1px solid
+                                                        silver;
                                                 }
                                             }
                                         }
                                     }
 
                                     &__log-with {
-                                        height: 1.93rem;
-                                        width: 26.8rem;
+                                        // height: 1.93rem;
+                                        // width: 26.8rem;
+
                                         @include flex(row);
                                         font-size: 1.8rem;
-
-                                        button {
-                                            display: inline-block;
-                                            border: none;
-                                            padding: 1rem 2rem;
-                                            margin: 0;
-                                            text-decoration: none;
-                                            
-                                            color: $log-forgot;
-                                            font-family: inherit;
-                                            font-size: 1rem;
-                                            cursor: pointer;
-                                            text-align: center;
-                                            
-                                    
-                                        }
+                                        
 
                                         &__btn {
-                                            &__icon {
+                                            width: 26.8rem;
+                                            height: 3.7rem;
+                                            display: flex;
+                                            justify-content: space-around;
+                                            padding: 1rem 2rem;
+                                            margin: 0;
+                                            border: none;
+                                            text-decoration: none;
+                                            font-size: 1rem;
+                                            font-family: inherit;
+                                            cursor: pointer;
+                                            background-color: $bg-top;
+                                            
+                                            div {
+                                                width: 26.8rem;
+                                            height: 3.7rem;
+                                                @include flex(row);
+                                                position: relative;
+                                                
+                                                span {
+                                                    position: absolute;
+                                                    display:flex;
+                                                    justify-content: space-around;
+                                                    background-color: red;
+                                                    width: 26.8rem;
+                                                    height: 3.7rem;
+                                                }
+                                                
                                                 img {
                                                     height: 12px;
                                                     width: 12px;
                                                 }
+                                                
+                                                &__content {
+                                                    font-size: 1.8rem;
+                                                    color: $log-forgot;
+                                                }
                                             }
                                         }
-
-
                                     }
                                 }
 
@@ -246,6 +290,7 @@
                         font-size: 1.8rem;
 
                         p {
+                            poisition: relative;
                             font-size: 1.8rem;
                         }
 
@@ -267,16 +312,19 @@
 
                 &__footer {
                     grid-area: footer;
-                    height: 100%;
-                    width: 100%;
+                    // height: 100%;
+                    // width: 100%;
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     font-size: 1.2rem;
                     font-weight: 400;
                     line-height: 2.2rem;
+                    margin-top: 1.3rem;
 
                     &__all {
+                        display: grid;
+                        align-self: end;
                         width: 65rem;
                         height: 15.7rem;
                         order: 5;
