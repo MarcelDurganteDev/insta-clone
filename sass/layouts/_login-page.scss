@@ -2,9 +2,12 @@
 @use '../abstracts/index.scss' as *;
 
 .container {
+    background-color: $bg;
     &__section {
         &__main {
             &__article {
+                width: 100vw;
+                height: 100vh;
                 display: grid;
                 grid-template-areas:
                     'left right'
@@ -12,23 +15,29 @@
                 justify-content: center;
                 align-items: center;
                 grid-template-columns: 1fr 1fr;
-                grid-template-rows: auto;
+                grid-template-rows: 83% auto;
+                overflow-x: hidden;
 
                 &__left {
                     height: 100%;
                     width: auto;
+                    margin-top: 8rem;
+
+                    display: flex;
+                    justify-content: end;
+                    align-items: center;
 
                     &__images {
                         &__frames {
                             img {
-                                height: 61.8rem;
-                                width: 45.4rem;
+                                height: 618px;
+                                width: auto;
                             }
 
-                            &__bg-img {
-                                height: 42.7rem;
-                                width: 24rem;
-                            }
+                            // &__bg-img {
+                            //     height: 61.8rem;
+                            //     width: 45.4rem;
+                            // }
                         }
                     }
                 }
@@ -37,9 +46,11 @@
                     @include flex(column);
                     height: 60.6rem;
                     width: 35rem;
+                    margin-top: 8rem;
 
                     &__top {
                         border: 1px solid silver;
+                        background-color: $bg-top;
                         @include flex(column);
                         height: 38.2rem;
                         width: 100%;
@@ -48,6 +59,11 @@
                             height: 5.1rem;
 
                             font-size: 5rem;
+                        }
+
+                        img {
+                            height: 51px;
+                            scale: 2;
                         }
 
                         &__form {
@@ -61,6 +77,10 @@
 
                                 // height: 26.5rem;
                                 width: 100%;
+
+                                a {
+                                    font-size: 12px;
+                                }
 
                                 &__cont {
                                     // height: 21.3rem;
@@ -87,8 +107,7 @@
                                                 &__span {
                                                     padding: 9px 0 7px 8px;
                                                     @include flex(column);
-                                                    // height: 3rem;
-                                                    // width: 20.8rem;
+
                                                     position: absolute;
                                                 }
                                             }
@@ -106,9 +125,10 @@
                                                 position: relative;
 
                                                 &__span {
-                                                    @include flex(column);
                                                     position: absolute;
                                                     padding: 9px 0 7px 8px;
+                                                    display: flex;
+                                                    align-items: flex-start;
                                                 }
                                             }
                                         }
@@ -145,7 +165,8 @@
                                             color: silver;
 
                                             &__or {
-                                                font-size: 1.3rem;
+                                                font-size: 1.5rem;
+                                                font-weight: 600;
 
                                                 &__line2 {
                                                     width: 10.7rem;
@@ -159,20 +180,79 @@
                                         height: 1.93rem;
                                         width: 26.8rem;
                                         @include flex(row);
+                                        font-size: 1.8rem;
+
+                                        button {
+                                            display: inline-block;
+                                            border: none;
+                                            padding: 1rem 2rem;
+                                            margin: 0;
+                                            text-decoration: none;
+                                            
+                                            color: $log-forgot;
+                                            font-family: inherit;
+                                            font-size: 1rem;
+                                            cursor: pointer;
+                                            text-align: center;
+                                            
+                                    
+                                        }
+
+                                        &__btn {
+                                            &__icon {
+                                                img {
+                                                    height: 12px;
+                                                    width: 12px;
+                                                }
+                                            }
+                                        }
+
+
                                     }
+                                }
+
+                                &__link {
+                                    font-size: 1.8rem;
                                 }
                             }
                         }
                     }
 
                     &__middle {
+                        height: 6.5rem;
+                        width: 35rem;
                         border: 1px solid silver;
+                        margin-top: 2rem;
+                        background-color: $bg-top;
+
+                        @include flex(row);
+
+                        &__cont {
+                            &__p {
+                                font-size: 1.4rem;
+                                // &__a {
+                                //     &__span {
+                                //         font-size: 1.4rem;
+                                //     }
+                                // }
+                            }
+                        }
                     }
 
                     &__bottom {
+                        // background-color: red;
+                        height: 10.1rem;
+                        line-height: 1.4rem;
+                        font-size: 1.8rem;
+
+                        p {
+                            font-size: 1.8rem;
+                        }
+
                         @include flex(column);
                         &__get--app {
                             &__cont {
+                                padding-top: 1.5rem;
                                 @include flex(row);
                                 a {
                                     img {
@@ -187,15 +267,70 @@
 
                 &__footer {
                     grid-area: footer;
+                    height: 100%;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 1.2rem;
+                    font-weight: 400;
+                    line-height: 2.2rem;
 
-                    @include flex(column);
+                    &__all {
+                        width: 65rem;
+                        height: 15.7rem;
+                        order: 5;
+                        padding: 0 2rem;
+                        padding-left: 1.6rem;
+                        padding-right: 1.6rem;
+                        position: relative;
 
-                    &__first {
-                        @include flex(row);
-                    }
+                        div a {
+                            all: unset;
+                            color: $footer-font;
+                        }
 
-                    &__third {
-                        @include flex(row);
+                        // align-items: stretch;
+
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+
+                        &__first {
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-between;
+                            // color: $footer-font;
+                            // margin: -12px 0 0 -12px;
+                            // width: calc(100% + 12px);
+                        }
+
+                        &__second {
+                            display: flex;
+                            flex-direction: row;
+                            gap: 1rem;
+                            align-items: center;
+                            justify-content: center;
+                        }
+
+                        &__third {
+                            display: flex;
+                            flex-direction: row;
+                            gap: 1rem;
+                            align-items: center;
+                            justify-content: center;
+                            padding: 1.6rem;
+
+                            div,
+                            h5 {
+                                color: $footer-font;
+                                text-decoration: none;
+                            }
+
+                            select {
+                                background-color: none;
+                            }
+                        }
                     }
                 }
             }
